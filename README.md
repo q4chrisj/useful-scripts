@@ -25,3 +25,11 @@ found.
    }
 }
 ```
+
+## Find in Files (windows)
+
+This command is super handy on windows machines. Ever need to look for a value
+in a web.config, or searching a log file for a particular message? Just open a
+powershell promt and run the following command
+
+`findstr /S "<string you are looking for>" c:\Octopus\Applications\Q4WEB-PRD-VA\*.*`
