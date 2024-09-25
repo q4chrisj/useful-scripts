@@ -1,5 +1,18 @@
 # Useful Scripts
 
+## SSM Parameters (ssm-params)
+
+> Environment: Linux / OSX
+
+This script will list the parameter store parameters and values based on the
+parameter path that is given as well as the AWS account that is configured on
+your local machine. For this example it is assumed that the ~/.aws/credentials
+contain an access key and secret access key for the Q4Web Dev/Test AWS account.
+
+`./ssm-params.sh /dev/platform-request-eds/`
+
+Will return all parameters that contain the given path and there values
+
 ## Lambda Vars (lambda-vars)
 
 > Environment: Linux / OSX
