@@ -1,5 +1,19 @@
 # Useful Scripts
 
+## Which IDMSV1
+
+> Environment: Linux / OSX
+
+This script will list all the EC2 instances in the target region and show which
+ones have HttpTokens enabled. If the value is optional that means that the
+instance is still running IDMSV1, if the value is required, the instance is
+running IDMSV2
+
+`./which-idms.sh us-east-1`
+
+Will return an InstanceId, 'required' or 'optional' and the instance name (if
+available) in a comma separated format.
+
 ## SSM Parameters (ssm-params)
 
 > Environment: Linux / OSX
