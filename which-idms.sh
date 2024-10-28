@@ -1,4 +1,4 @@
-# Get a list of instances that have HttpTokens set to 'ooptional' which indicates they are running IDMSV1
+# Get a list of instances that have HttpTokens set to 'optional' which indicates they are running IDMSV1
 
 if [[ $1 = "" ]]
 then
@@ -8,5 +8,5 @@ fi
 
 region=$1
 aws ec2 describe-instances --query "Reservations[*].Instances[*].{InstanceId:InstanceId,  MetadataOptions:MetadataOptions.HttpTokens, Name:Tags[?Key=='Name']|[0].Value}" --region $region --output json | 
-  jq -r '.[] | .[] | [.InstanceId, .MetadataOptions, .Name] | @tsv'
+  jq -r '.[] | .[] | [.InstanceId, .MetadataOptions, .Name] | @csv'
 
