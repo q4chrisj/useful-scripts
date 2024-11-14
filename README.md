@@ -64,3 +64,16 @@ in a web.config, or searching a log file for a particular message? Just open a
 powershell promt and run the following command
 
 `findstr /S "<string you are looking for>" c:\Octopus\Applications\Q4WEB-PRD-VA\*.*`
+
+## List Object in an S3 bucket by date
+
+> Environment: Linux/Mac
+
+The below aws cli command will list all the objects in a bucket that were last
+modified before Jan 1, 2024
+
+```
+aws s3api list-objects-v2 --bucket <bucket-name> \
+  --query 'Contents[?LastModified<=`2024-01-01`].[Key, LastModified]' \
+  --output text | wc -l`
+```
